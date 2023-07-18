@@ -6,5 +6,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "dependencies": {
+    "lerna": "^7.1.4"
   }
 }
