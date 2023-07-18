@@ -1,0 +1,10 @@
+{
+  "name": "circu",
+  "author": "Ajibade Akintade <ajibade.akintade@gmail.com>",
+  "packageManager": "yarn@3.6.1",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
