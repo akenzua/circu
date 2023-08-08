@@ -7,7 +7,7 @@ export interface GridState {
 
 const initialState: GridState = {
   isSetGrid: true,
-  gridColor: '#ccc ',
+  gridColor: '#cccccc ',
 }
 
 const gridSlice = createSlice({
