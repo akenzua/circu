@@ -1,5 +1,6 @@
 'use-client'
 
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setGridColor, toogleGrid } from '@/redux/slices/gridSlices'
 
@@ -11,7 +12,6 @@ const GridControls = () => {
   const dispatch = useDispatch()
 
   const handleChangeGridColor = (e: any) => {
-    console.log(e.target.value)
     dispatch(setGridColor(e.target.value))
   }
 
