@@ -1,5 +1,3 @@
-'use-client'
-
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setGridColor, toogleGrid } from '@/redux/slices/gridSlices'

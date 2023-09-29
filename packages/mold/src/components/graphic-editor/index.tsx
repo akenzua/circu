@@ -1,20 +1,18 @@
-'use client'
-
 import React from 'react'
-
+import { Providers } from '@/redux/Provider'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import NotLargeEnough from '../notLargeEnough'
 
 import Canvas from '../canvas'
-import Editor from '../editor'
+import Toolbar from '../toolbar'
 
-import styles from './wrapper.module.css'
+import styles from './graphic-editor.module.css'
 
 type CanvasProps = {
   requiredScreenWidth: number
 }
 
-const Wrapper = ({ requiredScreenWidth }: CanvasProps) => {
+const GraphicEditor = ({ requiredScreenWidth }: CanvasProps) => {
   const isScreenNotLargeEnough = useMediaQuery(requiredScreenWidth)
 
   if (isScreenNotLargeEnough) {
@@ -22,11 +20,13 @@ const Wrapper = ({ requiredScreenWidth }: CanvasProps) => {
   }
 
   return (
-    <section className={styles.svgCanvas}>
-      <Canvas />
-      <Editor />
-    </section>
+    <Providers>
+      <section className={styles.svgCanvas}>
+        <Canvas />
+        <Toolbar />
+      </section>
+    </Providers>
   )
 }
 
-export default Wrapper
+export default GraphicEditor

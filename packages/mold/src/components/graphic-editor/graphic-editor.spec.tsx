@@ -2,7 +2,7 @@ import React from 'react'
 import { render, setupMatchMediaMock } from '@/test-utils'
 import '@testing-library/jest-dom/extend-expect'
 import user from '@testing-library/user-event'
-import Wrapper from './'
+import GraphicEditor from '.'
 
 describe('wrapper', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('wrapper', () => {
 
   it('render correctly', () => {
     const { getByTestId, getByRole, getByLabelText } = render(
-      <Wrapper requiredScreenWidth={595} />,
+      <GraphicEditor requiredScreenWidth={595} />,
     )
     const svgElement = getByTestId('resume-root')
     const toggleButton = getByRole('button')
@@ -26,7 +26,7 @@ describe('wrapper', () => {
   it('toggle button removes the grid', async () => {
     user.setup()
     const { queryByTestId, getByRole } = render(
-      <Wrapper requiredScreenWidth={595} />,
+      <GraphicEditor requiredScreenWidth={595} />,
     )
     const svgElement = queryByTestId('resume-root')
     const toggleButton = getByRole('button')
@@ -36,7 +36,7 @@ describe('wrapper', () => {
 
   it('return NotLargeEnough when the screen size is mobile', () => {
     setupMatchMediaMock(true)
-    const { getByText } = render(<Wrapper requiredScreenWidth={595} />)
+    const { getByText } = render(<GraphicEditor requiredScreenWidth={595} />)
     expect(
       getByText('This screen size is not large enough'),
     ).toBeInTheDocument()
