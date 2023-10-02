@@ -15,7 +15,8 @@
     "postpack": "pinst --enable",
     "start:mold": "lerna run --stream --scope=mold dev",
     "test:mold": "lerna run --stream --scope=mold test",
-    "test:all": "lerna run --stream --scope=mold test"
+    "test:all": "lerna run --stream --scope=mold test",
+    "start:shell": "lerna run --stream --scope=app-shell dev"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.2.1",

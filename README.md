@@ -36,6 +36,21 @@ yarn run start:mold
 
 # Contribution
 
+    - Branching
+        To create a branch, the naming convention must be as follows:
+        1. Label: This could be feature, bugfix, docs, etc, describing what the
+        branch is doing
+
+        2. Package: This is the package you worked on an if you work on multiple
+        packages, separate them by forward slash as `in mold/storybook/`, however,
+        endeavour tho keep your branch to a package and if config at the rook of the monorepo, use config
+
+        3. Branch id, this is the id from the project board
+
+        4. Title if the branck separated by hyphen
+        ```{label}/{package}/{branchId}-{title}```
+        ```feature/mold/001-set-up-app-shell-for-all-microfrontend```
+
 # Contact
 
 ajibade.akintade@gmail.com

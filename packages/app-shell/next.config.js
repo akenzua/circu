@@ -5,11 +5,12 @@ module.exports = {
     if (!options.isServer) {
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'mold',
+          name: 'app-shell',
           filename: 'static/chunks/remoteEntry.js',
-          exposes: {
-            './mold': '/src/pages/index.tsx',
+          remotes: {
+            mold: 'mold@http://localhost:3001/_next/static/chunks/remoteEntry.js',
           },
+          exposes: {},
           shared: {},
         }),
       )
