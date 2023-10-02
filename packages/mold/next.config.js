@@ -2,17 +2,15 @@ const NextFederationPlugin = require('@module-federation/nextjs-mf')
 
 module.exports = {
   webpack(config, options) {
-    const { webpack } = options
     if (!options.isServer) {
-      config.cache = false
       config.plugins.push(
         new NextFederationPlugin({
-          name: 'checkout',
-          remotes: {},
+          name: 'mold',
           filename: 'static/chunks/remoteEntry.js',
-          exposes: {},
+          exposes: {
+            './mold': '/src/pages/index.tsx',
+          },
           shared: {},
-          extraOptions: {},
         }),
       )
     }
